@@ -12,6 +12,10 @@ app.use(express.urlencoded({ extended: false }));
 
 connectDatabase();
 
+app.get("/", (req, res) => {
+  res.send("Server is running");
+});
+
 app.use("/api", router);
 
 const errorHandler = (err, req, res, next) => {
